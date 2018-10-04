@@ -63,25 +63,6 @@ function productCatalog() {
         message: "How many units would you like to buy",
     }
     ]).then(function(answers) {
-        /* COMMENT: don't believe this belongs here, needs to introduce a way of taking the answer and using it to tell mysql we want X units of a product..
-
-        there should be conditions in place prior. to tell me whether or not it is available before attempting to deduct..
-
-        var q = "SELECT item_id, product_name, department_name, stock_quanity FROM products WHERE?";
-        connection.query(q, { inventory: answer.inventory }, function(err, res){
-            for (var i = 0; i < res.length; i++){
-                console.log(res)
-            }
-        })
-        
-
-        inqurer.prompt({
-            message: "How many units would you like to buy?",
-            type: "input",
-            name: "units"
-        }, stockQuanity)
-        */
-
        productinStock(answers);
     })
 }
